@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R.G instapack — دسترسی آزاد به اینترنت</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradient-bg 15s ease infinite;
+      color: white;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    @keyframes gradient-bg {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .card-glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      transition: all 0.3s ease;
+    }
+    .card-glass:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="px-4 py-8">
+  <header class="text-center max-w-3xl mx-auto mb-10">
+    <h1 class="text-4xl font-bold mb-4">R.G instapack</h1>
+    <p class="text-blue-200 text-lg">سرویس رایگان برای دسترسی امن و آزاد به اینترنت</p>
+  </header>
+
+  <section id="subscription" class="card-glass rounded-2xl p-6 max-w-2xl mx-auto mb-10 text-center">
+    <div class="mb-4">
+      <i class="fa-solid fa-link text-3xl text-white bg-green-600 p-4 rounded-full shadow-lg"></i>
+    </div>
+    <h2 class="text-2xl font-bold mb-2">لینک اشتراک</h2>
+    <p class="text-gray-300 mb-4">لینک زیر را در اپلیکیشن خود وارد کنید تا سرورها به‌صورت خودکار اضافه شوند:</p>
+    <div class="bg-black bg-opacity-20 p-3 rounded-xl mb-4">
+      <p id="subscriptionLink" class="font-mono break-all text-green-300 font-bold">https://instapack.rgnet.link</p>
+    </div>
+    <button onclick="copySubLink()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold">
+      <i class="fa-solid fa-copy ml-2"></i> کپی لینک
+    </button>
+  </section>
+
+  <footer class="text-center text-blue-200 text-sm border-t border-white border-opacity-20 pt-6 mt-10">
+    <p>R.G instapack — ساخته شده برای مردم ایران @ 1404</p>
+  </footer>
+
+  <script>
+    function copySubLink() {
+      const link = document.getElementById('subscriptionLink').textContent;
+      navigator.clipboard.writeText(link).then(() => {
+        alert('لینک با موفقیت کپی شد!');
+      }).catch(() => {
+        alert('خطا در کپی کردن لینک.');
+      });
+    }
+  </script>
+</body>
+</html>
